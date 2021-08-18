@@ -1,13 +1,7 @@
 steps:
   # Build the container image
   - name: "gcr.io/cloud-builders/docker"
-    args:
-      [
-        "build",
-        "-t",
-        "gcr.io/$PROJECT_ID/frontend-task",
-        "./frontend/task"
-      ]
+    args: ["build", "-t", "gcr.io/$PROJECT_ID/frontend-task", "."]
   # Push the container image to Container Registry
   - name: "gcr.io/cloud-builders/docker"
     args: ["push", "gcr.io/$PROJECT_ID/frontend-task"]
